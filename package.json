@@ -7,7 +7,10 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "alfy": "^1.0.0",
-    "prettier": "^2.6.2"
+    "alfy": "^1.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2",
+    "prettier-plugin-organize-imports": "^2.3.4"
   }
 }
