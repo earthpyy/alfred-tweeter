@@ -7,7 +7,34 @@
 	<key>category</key>
 	<string>Internet</string>
 	<key>connections</key>
-	<dict/>
+	<dict>
+		<key>A1DCE7D6-22B6-454A-B8BA-5341EC934D91</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9F773A43-D784-4C90-B059-B2036FD10481</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BD55DF47-96D7-44C8-942A-18D4E094087E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A1DCE7D6-22B6-454A-B8BA-5341EC934D91</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
 	<key>createdby</key>
 	<string>Preeti Yuankrathok</string>
 	<key>description</key>
@@ -18,6 +45,50 @@
 	<string>Tweeter</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node src/actions.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A1DCE7D6-22B6-454A-B8BA-5341EC934D91</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9F773A43-D784-4C90-B059-B2036FD10481</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -46,7 +117,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node index.js "$1"</string>
+				<string>./node_modules/.bin/run-node src/index.js "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -72,12 +143,26 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>BD55DF47-96D7-44C8-942A-18D4E094087E</key>
+		<key>9F773A43-D784-4C90-B059-B2036FD10481</key>
+		<dict>
+			<key>xpos</key>
+			<integer>560</integer>
+			<key>ypos</key>
+			<integer>65</integer>
+		</dict>
+		<key>A1DCE7D6-22B6-454A-B8BA-5341EC934D91</key>
 		<dict>
 			<key>xpos</key>
 			<integer>325</integer>
 			<key>ypos</key>
-			<integer>365</integer>
+			<integer>65</integer>
+		</dict>
+		<key>BD55DF47-96D7-44C8-942A-18D4E094087E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>90</integer>
+			<key>ypos</key>
+			<integer>65</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
