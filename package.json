@@ -1,0 +1,13 @@
+{
+  "name": "alfred-tweeter",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:earthpyy/alfred-tweeter.git",
+  "author": "Preeti Yuankrathok <preetisatit@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "alfy": "^1.0.0",
+    "prettier": "^2.6.2"
+  }
+}
