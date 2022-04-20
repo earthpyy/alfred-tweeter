@@ -35,10 +35,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>createdby</key>
-	<string>Preeti Yuankrathok</string>
-	<key>description</key>
-	<string>A simple Twitter tweet client</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -165,7 +161,5 @@
 			<integer>65</integer>
 		</dict>
 	</dict>
-	<key>webaddress</key>
-	<string>https://github.com/earthpyy/alfred-tweeter</string>
 </dict>
 </plist>
