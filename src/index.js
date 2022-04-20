@@ -1,6 +1,5 @@
 import alfy from 'alfy'
-
-const MAX_LENGTH = 280
+import { MAX_LENGTH } from './config.js'
 
 function main() {
   const accessToken = alfy.config.get('accessToken')
@@ -9,19 +8,23 @@ function main() {
       {
         title: 'Login with Twitter',
         subtitle: 'This will open a new browser window to login',
-				arg: 'login',
+        arg: 'login',
       },
     ])
     return
   }
 
   const leftLength = MAX_LENGTH - alfy.input.length
+  if (leftLength < 0) {
+    alfy.error('Message exceeded the characters limit!')
+    return
+  }
 
   alfy.output([
     {
       title: `Tweet '${alfy.input}'`,
       subtitle: `${leftLength} characters remaining`,
-			arg: `tweet ${alfy.input}`
+      arg: `tweet ${alfy.input}`,
     },
   ])
 }

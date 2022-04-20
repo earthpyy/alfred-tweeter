@@ -12,7 +12,10 @@
     "preuninstall": "alfy-cleanup"
   },
   "dependencies": {
-    "alfy": "^1.0.0"
+    "alfy": "^1.0.0",
+    "axios": "^0.26.1",
+    "express": "^4.17.3",
+    "open": "^8.4.0"
   },
   "devDependencies": {
     "prettier": "^2.6.2"
