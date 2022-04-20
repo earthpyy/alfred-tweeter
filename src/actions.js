@@ -9,6 +9,7 @@ async function login() {
   await open(url)
 
   const child = spawn('./node_modules/.bin/run-node', ['src/callback.js'], { detached: true })
+  alfy.cache.set('pid', child.pid)
   setTimeout(() => process.kill(-child.pid, 'SIGINT'), 1000 * LOGIN_TIMEOUT_SECONDS)
 }
 
