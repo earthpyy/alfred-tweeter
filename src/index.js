@@ -1,13 +1,13 @@
 import alfy from 'alfy'
 import { MAX_LENGTH } from './config.js'
 
-function main() {
+async function main() {
   const accessToken = alfy.config.get('accessToken')
   if (!accessToken) {
     alfy.output([
       {
         title: 'Login with Twitter',
-        subtitle: 'This will open a new browser window to login',
+        subtitle: 'First time only. This will open a new browser window to login.',
         arg: 'login',
       },
     ])
@@ -29,4 +29,4 @@ function main() {
   ])
 }
 
-main()
+await main()
