@@ -24,9 +24,12 @@ async function runActions() {
     return
   }
 
-  // tweet
-  const message = text.split(' ').slice(1).join(' ')
-  await tweet(message)
+  if (action === 'tweet') {
+    const message = text.split(' ').slice(1).join(' ')
+    await tweet(message)
+    process.stdout.write('Tweeted!')
+    return
+  }
 }
 
 await runActions()
