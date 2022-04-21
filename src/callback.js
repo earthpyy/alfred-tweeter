@@ -2,7 +2,7 @@ import alfy from 'alfy'
 import axios from 'axios'
 import express from 'express'
 import qs from 'qs'
-import { API_ENDPOINT, CLIENT_ID, EXPRESS_PORT, LOGIN_TIMEOUT_SECONDS } from './config.js'
+import { ACCESS_TOKEN_AGE_SECONDS, API_ENDPOINT, CLIENT_ID, EXPRESS_PORT, LOGIN_TIMEOUT_SECONDS } from './config.js'
 import { killProcess } from './utils.js'
 
 const app = express()
@@ -23,6 +23,7 @@ app.get('/authorized', async (req, res) => {
   const tokenResponse = await axios.post(`${API_ENDPOINT}/oauth2/token`, qs.stringify(payload))
 
   // save token
+  alfy.cache.set('accessToken', tokenResponse.data.access_token, { maxAge: 1000 * ACCESS_TOKEN_AGE_SECONDS })
   alfy.config.set('refreshToken', tokenResponse.data.refresh_token)
 
   res.send('Success! You can close this browser.')

@@ -21,7 +21,10 @@ async function login() {
 }
 
 async function tweet(message) {
-  const accessToken = await refresh()
+  let accessToken = alfy.cache.get('accessToken')
+  if (!accessToken) {
+    accessToken = await refresh()
+  }
 
   return axios.post(
     `${API_ENDPOINT}/tweets`,

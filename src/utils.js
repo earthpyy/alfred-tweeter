@@ -1,7 +1,7 @@
 import alfy from 'alfy'
 import axios from 'axios'
 import qs from 'qs'
-import { API_ENDPOINT, CLIENT_ID } from './config.js'
+import { ACCESS_TOKEN_AGE_SECONDS, API_ENDPOINT, CLIENT_ID } from './config.js'
 
 export function generateRandom(length) {
   var result = ''
@@ -36,6 +36,7 @@ export async function refresh(refreshToken = null) {
     client_id: CLIENT_ID,
   }
   const tokenResponse = await axios.post(`${API_ENDPOINT}/oauth2/token`, qs.stringify(payload))
+  alfy.cache.set('accessToken', tokenResponse.data.access_token, { maxAge: 1000 * ACCESS_TOKEN_AGE_SECONDS })
   alfy.config.set('refreshToken', tokenResponse.data.refresh_token)
 
   return tokenResponse.data.access_token
