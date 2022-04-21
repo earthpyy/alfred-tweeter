@@ -2,7 +2,8 @@ import alfy from 'alfy'
 import axios from 'axios'
 import express from 'express'
 import qs from 'qs'
-import { API_ENDPOINT, CLIENT_SECRET, EXPRESS_PORT } from './config.js'
+import { API_ENDPOINT, CLIENT_ID, EXPRESS_PORT, LOGIN_TIMEOUT_SECONDS } from './config.js'
+import { killProcess } from './utils.js'
 
 const app = express()
 
@@ -15,22 +16,25 @@ app.get('/authorized', async (req, res) => {
   const payload = {
     code,
     grant_type: 'authorization_code',
-    redirect_uri: `http://localhost:${EXPRESS_PORT}/tokenized`,
-    code_verifier: 'challenge',
+    client_id: CLIENT_ID,
+    redirect_uri: `http://localhost:${EXPRESS_PORT}/authorized`,
+    code_verifier: alfy.cache.get('challenge'),
   }
-  await axios.post(`${API_ENDPOINT}/oauth2/token`, qs.stringify(payload), {
-    headers: { Authorization: `Basic ${CLIENT_SECRET}` },
-  })
-})
+  const tokenResponse = await axios.post(`${API_ENDPOINT}/oauth2/token`, qs.stringify(payload))
 
-app.get('/tokenized', async (req, res) => {
-  // TODO: set alfy config
-
-  // kill express
-  process.kill(-alfy.cache.get('pid'))
-  alfy.cache.delete('pid')
+  // save token
+  alfy.config.set('refreshToken', tokenResponse.data.refresh_token)
 
   res.send('Success! You can close this browser.')
+
+  // kill express
+  killProcess()
 })
+
+// auto exit
+setTimeout(() => {
+  alfy.cache.delete('pid')
+  process.exit(0)
+}, 1000 * LOGIN_TIMEOUT_SECONDS)
 
 app.listen(EXPRESS_PORT)

@@ -1,9 +1,12 @@
 import alfy from 'alfy'
 import { MAX_LENGTH } from './config.js'
+import { killProcess } from './utils.js'
 
 async function main() {
-  const accessToken = alfy.config.get('accessToken')
-  if (!accessToken) {
+  const refreshToken = alfy.config.get('refreshToken')
+  if (!refreshToken) {
+    killProcess()
+
     alfy.output([
       {
         title: 'Login with Twitter',

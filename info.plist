@@ -8,6 +8,32 @@
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
+		<key>280650D3-BD1C-4CCD-9E13-0C9AAC21CCC6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9857F1B6-6803-4F1C-909F-1435472FBB6C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9857F1B6-6803-4F1C-909F-1435472FBB6C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0B22E8DE-BD64-43D4-8F4A-83CD4748AEBF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A1DCE7D6-22B6-454A-B8BA-5341EC934D91</key>
 		<array>
 			<dict>
@@ -41,50 +67,6 @@
 	<string>Tweeter</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>./node_modules/.bin/run-node src/actions.js "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>A1DCE7D6-22B6-454A-B8BA-5341EC934D91</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string></string>
-				<key>title</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>9F773A43-D784-4C90-B059-B2036FD10481</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -134,31 +116,161 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node src/actions.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A1DCE7D6-22B6-454A-B8BA-5341EC934D91</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9F773A43-D784-4C90-B059-B2036FD10481</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node src/actions.js reset</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9857F1B6-6803-4F1C-909F-1435472FBB6C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tweeter-reset</string>
+				<key>subtext</key>
+				<string>You will need to login with Twitter again</string>
+				<key>text</key>
+				<string>Reset Tweeter data</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>280650D3-BD1C-4CCD-9E13-0C9AAC21CCC6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0B22E8DE-BD64-43D4-8F4A-83CD4748AEBF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0B22E8DE-BD64-43D4-8F4A-83CD4748AEBF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>550</integer>
+			<key>ypos</key>
+			<integer>220</integer>
+		</dict>
+		<key>280650D3-BD1C-4CCD-9E13-0C9AAC21CCC6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>80</integer>
+			<key>ypos</key>
+			<integer>220</integer>
+		</dict>
+		<key>9857F1B6-6803-4F1C-909F-1435472FBB6C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>315</integer>
+			<key>ypos</key>
+			<integer>220</integer>
+		</dict>
 		<key>9F773A43-D784-4C90-B059-B2036FD10481</key>
 		<dict>
 			<key>xpos</key>
-			<integer>560</integer>
+			<integer>550</integer>
 			<key>ypos</key>
-			<integer>65</integer>
+			<integer>70</integer>
 		</dict>
 		<key>A1DCE7D6-22B6-454A-B8BA-5341EC934D91</key>
 		<dict>
 			<key>xpos</key>
-			<integer>325</integer>
+			<integer>315</integer>
 			<key>ypos</key>
-			<integer>65</integer>
+			<integer>70</integer>
 		</dict>
 		<key>BD55DF47-96D7-44C8-942A-18D4E094087E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>80</integer>
 			<key>ypos</key>
-			<integer>65</integer>
+			<integer>70</integer>
 		</dict>
 	</dict>
 </dict>
