@@ -3,7 +3,7 @@
   "description": "A simple Alfred workflow for tweeting!",
   "version": "0.1.0",
   "main": "src/index.js",
-  "repository": "git@github.com:earthpyy/alfred-tweeter.git",
+  "repository": "https://github.com/earthpyy/alfred-tweeter",
   "author": "Preeti Yuankrathok <preetisatit@gmail.com>",
   "license": "MIT",
   "type": "module",
