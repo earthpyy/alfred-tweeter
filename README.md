@@ -29,16 +29,21 @@
 
 ---
 
-# Installation
+## Installation
 
 ```bash
 npm install -g alfred-tweeter
 ```
 
-# Usage
+## Usage
 
 <p align="center">
   <img src="screenshot.gif" alt="Screenshot" />
 </p>
 
 > You will need to login with Twitter on the first time.
+
+## Related Links
+
+- [Alfred](https://www.alfredapp.com)
+- [Alfy](https://github.com/sindresorhus/alfy)
